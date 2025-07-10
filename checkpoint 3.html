@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkpoint - 3azyz Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #fdfbfb;
+      --text-color: #333;
+      --card-bg: white;
+    }
+
+    body.dark {
+      --bg-color: #1e1e2f;
+      --text-color: #f1f1f1;
+      --card-bg: #2a2a40;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 20px;
+      transition: all 0.4s ease;
+    }
+
+    #intro-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #4a00e0;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      z-index: 9999;
+      animation: fadeOutIntro 2s ease-in-out 2s forwards;
+    }
+
+    @keyframes fadeOutIntro {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: slideIn 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #4a00e0;
+    }
+
+    .theme-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .theme-toggle button {
+      background-color: #4a00e0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .theme-toggle button:hover {
+      background-color: #3700b3;
+    }
+
+    /* Lavalamp Menu */
+    .lavalamp-nav {
+      margin: 27px auto 40px;
+      position: relative;
+      width: 590px;
+      height: 50px;
+      background-color: #34495e;
+      border-radius: 8px;
+      font-size: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .lavalamp-nav a {
+      line-height: 50px;
+      height: 100%;
+      font-size: 15px;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+    }
+
+    .lavalamp-nav .animation {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      z-index: 0;
+      transition: all 0.5s ease 0s;
+      border-radius: 8px;
+    }
+
+    .lavalamp-nav a:nth-child(1) { width: 100px; }
+    .lavalamp-nav a:nth-child(2) { width: 110px; }
+    .lavalamp-nav a:nth-child(3) { width: 100px; }
+    .lavalamp-nav a:nth-child(4) { width: 160px; }
+    .lavalamp-nav a:nth-child(5) { width: 120px; }
+
+    .lavalamp-nav .start-home,
+    .lavalamp-nav a:nth-child(1):hover ~ .animation {
+      width: 100px; left: 0; background-color: #1abc9c;
+    }
+
+    .lavalamp-nav .start-about,
+    .lavalamp-nav a:nth-child(2):hover ~ .animation {
+      width: 110px; left: 100px; background-color: #e74c3c;
+    }
+
+    .lavalamp-nav .start-blog,
+    .lavalamp-nav a:nth-child(3):hover ~ .animation {
+      width: 100px; left: 210px; background-color: #3498db;
+    }
+
+    .lavalamp-nav .start-portefolio,
+    .lavalamp-nav a:nth-child(4):hover ~ .animation {
+      width: 160px; left: 310px; background-color: #9b59b6;
+    }
+
+    .lavalamp-nav .start-contact,
+    .lavalamp-nav a:nth-child(5):hover ~ .animation {
+      width: 120px; left: 470px; background-color: #e67e22;
+    }
+
+    main {
+      animation: fadeIn 1s ease-in;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: background 0.4s ease;
+    }
+
+    h2 {
+      color: #4a00e0;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form input[type="submit"] {
+      background: #4a00e0;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form input[type="submit"]:hover {
+      background: #3700b3;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-40px); opacity: 0; }
+      to   { transform: translateY(0);     opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="intro-animation">👋 Hello!</div>
+
+  <header>
+    <h1>🌐 Welcome to 3azyz Web Site</h1>
+  </header>
+
+  <!-- 🌙 Toggle Dark/Light Mode -->
+  <div class="theme-toggle">
+    <button onclick="toggleTheme()">Toggle Dark / Light Mode</button>
+  </div>
+
+  <!-- 🔥 Lavalamp Menu -->
+  <h1 style="text-align: center; font-family: 'Cherry Swash', cursive; color: #34495e;">Lavalamp CSS Menu</h1>
+  <nav class="lavalamp-nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Blog</a>
+    <a href="#resume">Portfolio</a>
+    <a href="#contact">Contact</a>
+    <div class="animation start-home"></div>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello, my name is 3azyz and this is my personal website. I’m passionate about coding, design, gaming, and drawing.</p>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Drawing (Anime style)</li>
+        <li>Games: Valorant, CS2, Minecraft</li>
+      </ul>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>Here are my skills for this summer:</p>
+      <table>
+        <tr><th>Skill</th><th>Level</th></tr>
+        <tr><td>HTML/CSS</td><td>Advanced</td></tr>
+        <tr><td>JavaScript</td><td>Intermediate</td></tr>
+        <tr><td>Branding</td><td>Advanced</td></tr>
+      </table>
+    </section>
+
+    <section id="setup">
+      <h2>🛠️ My Setup</h2>
+      <ul>
+        <li>Mouse: Logitech G Pro X Superlight</li>
+        <li>Keyboard: SteelSeries Apex Pro</li>
+        <li>Headset: HyperX Cloud II</li>
+        <li>Monitor: 144Hz ASUS 24"</li>
+        <li>Software: VS Code, Figma, GitHub</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" rows="5" required></textarea>
+        <input type="submit" value="Send Message">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 — Thanks for helping me learn HTML ❤️</p>
+    <blockquote style="margin-top: 20px; font-style: italic; color: #4a00e0;">
+      "Code. Create. Repeat. — 3azyz"
+    </blockquote>
+  </footer>
+
+  <!-- 🌗 Theme Toggle Script -->
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>
