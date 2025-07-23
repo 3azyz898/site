@@ -32,8 +32,8 @@
         </select>
 
         <div class="btn-group">
-          <button class="btn">commander</button>
-          <button class="btn">ajouter au panier</button>
+          <button class="btn" id="commanderBtn2">commander</button>
+          <button class="btn" id="commanderBtn2+">ajouter au panier</button>
         </div>
 
         <!-- Description -->
@@ -48,6 +48,15 @@
   </section>
 
   <script>
+    document.getElementById('commanderBtn2').addEventListener('click', function () {
+      window.location.href = 'signin.html';
+    });
+
+                 document.getElementById('commanderBtn2+').addEventListener('click', function () {
+      window.location.href = 'signin.html';
+    }); 
+
+
     const mainImage = document.querySelector('.main-image');
     const thumbnails = document.querySelectorAll('.thumbnails img');
 
@@ -61,3 +70,4 @@
 
 </body>
 </html>
+

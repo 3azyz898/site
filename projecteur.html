@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stylet pour iPad - Apple Pencil</title>
-  <link rel="stylesheet" href="pen.css" />
+  <link rel="stylesheet" href="projecteur.css" />
 </head>
 <body>
 
@@ -13,7 +13,7 @@
       <div class="product-images">
         <img src="product1.jpg" alt="Stylet Apple Pencil" class="main-image" />
         <div class="thumbnails">
-          <img src="prudect1.jpg" alt="Aperçu 1" />
+          <img src="product1.jpg" alt="Aperçu 1" />
           <img src="prudect2.jpg" alt="Aperçu 2" />
           <img src="prudect3.jpg" alt="Aperçu 3" />
           <img src="prudect4.jpg" alt="Aperçu 4" />
@@ -23,28 +23,41 @@
 
       <div class="product-details">
         <h2>Stylet pour iPad 6ème-11ème Génération - Apple Pencil 2ème génération compatible avec iPad Pro 11"/12.9" & iPad Air 3/4/5</h2>
-        <p><strong>149 TND</strong> <span style="text-decoration: line-through; color: #888;">199 TND</span></p>
+        <p><strong>149 TND</strong> 
+          <span style="text-decoration: line-through; color: #888;">199 TND</span>
+        </p>
 
         <label for="color">Couleur :</label>
         <select id="color">
           <option>black</option>
+        </select>
 
         <div class="btn-group">
-          <button class="btn">commander</button>
-          <button class="btn">ajouter au panier</button>
+          <button class="btn" id="commanderBtn5">commander</button>
+          <button class="btn" id="commanderBtn+5">ajouter au panier</button>
         </div>
 
         <!-- Description -->
         <div class="product-description">
           <p>
-           Streaming illimité : notre plateforme de streaming intégrée intègre des milliers de chaînes et d'applications, vous permettant de plonger dans le contenu directement depuis le projecteur. Que vous souhaitiez visionner les dernières séries ou des événements en direct, tout est à portée de clic.</p>
+            Streaming illimité : notre plateforme de streaming intégrée intègre des milliers de chaînes et d'applications, vous permettant de plonger dans le contenu directement depuis le projecteur. Que vous souhaitiez visionner les dernières séries ou des événements en direct, tout est à portée de clic.
+          </p>
         </div>
-
       </div>
     </div>
   </section>
 
   <script>
+    // Rediriger vers signin.html au clic sur "commander"
+    document.getElementById('commanderBtn5').addEventListener('click', function () {
+      window.location.href = 'signin.html';
+    });
+
+     document.getElementById('commanderBtn+5').addEventListener('click', function () {
+      window.location.href = 'signin.html';
+    }); 
+
+    // Changement d'image au clic sur les miniatures
     const mainImage = document.querySelector('.main-image');
     const thumbnails = document.querySelectorAll('.thumbnails img');
 
@@ -58,4 +71,3 @@
 
 </body>
 </html>
-black

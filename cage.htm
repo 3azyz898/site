@@ -28,8 +28,8 @@
         </select>
 
         <div class="btn-group">
-        <button class="btn">commander</button>
-        <button class="btn">ajouter au panier</button>
+        <button class="btn" id="commanderBtn3">commander</button>
+        <button class="btn" id="commanderBtn3+">ajouter au panier</button>
         </div>
 
         <!-- Description -->
@@ -41,17 +41,26 @@
     </div>
 </section>
 
-<script>
+  <script>
+    document.getElementById('commanderBtn3').addEventListener('click', function() {
+  window.location.href = 'signin.html';
+});
+
+             document.getElementById('commanderBtn3+').addEventListener('click', function () {
+      window.location.href = 'signin.html';
+    }); 
+
+
     const mainImage = document.querySelector('.main-image');
     const thumbnails = document.querySelectorAll('.thumbnails img');
 
     thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener('click', () => {
+      thumbnail.addEventListener('click', () => {
         mainImage.src = thumbnail.src;
         mainImage.alt = thumbnail.alt;
+      });
     });
-    });
-</script>
+  </script>
 
 </body>
 </html>
