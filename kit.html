@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Stylet pour iPad - Apple Pencil</title>
+<link rel="stylesheet" href="kit.css" />
+</head>
+<body>
+
+<section class="product-card">
+    <div class="product-container">
+    <div class="product-images">
+        <img src="kit1.jpg" alt="kit Bluetooth" class="main-image" />
+        <div class="thumbnails">
+        <img src="kit1.jpg" alt="Aperçu 1" />
+        <img src="kit2.jpg" alt="Aperçu 2" />
+        <img src="kit3.jpg" alt="Aperçu 3" />
+        <img src="kit4.jpg" alt="Aperçu 4" />
+        </div>
+    </div>
+
+    <div class="product-details">
+        <h2>EZRA TWS01 Bluetooth 2 écouteurs Bluetooth sans fill, Jusqu'à 40 Heures d'autonomie, Compact et Confortable à Prendre en Main, IP54, Charge Rapide</h2>
+        <p><strong>49 TND</strong> <span style="text-decoration: line-through; color: #888;">60 TND</span></p>
+
+        <label for="color">Couleur :</label>
+        <select id="color">
+        <option>white</option>
+        </select>
+
+        <div class="btn-group">
+        <button class="btn">commander</button>
+        <button class="btn">ajouter au panier</button>
+        </div>
+
+        <!-- Description -->
+        <div class="product-description">
+        <p>
+            Chargez les écouteurs pendant 10 minutes avant de vous rendre au travail et écoutez du contenu pendant 3 heures, une fois entièrement chargés, les écouteurs offrent jusqu'à 9 heures d'écoute et lorsqu'ils sont rechargés à plusieurs reprises avec le boîtier, ils peuvent offrir jusqu'à 40 heures d'écoute</p>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+<script>
+    const mainImage = document.querySelector('.main-image');
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+
+    thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+    });
+    });
+</script>
+
+</body>
+</html>

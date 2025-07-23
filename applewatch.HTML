@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Stylet pour iPad - Apple Pencil</title>
+<link rel="stylesheet" href="applewatch.css" />
+</head>
+<body>
+
+<section class="product-card">
+    <div class="product-container">
+    <div class="product-images">
+        <img src="watch.jpg" alt="" class="main-image" />
+        <div class="thumbnails">
+        <img src="watch.jpg" alt="Aperçu 1" />
+        <img src="watch2.jpg" alt="Aperçu 2" />
+        <img src="watch3.jpg" alt="Aperçu 3" />
+        <img src="watch4.jpg" alt="Aperçu 4" />
+        <img src="watch5.jpg" alt="Aperçu 5" />
+        </div>
+    </div>
+
+    <div class="product-details">
+        <h2>Apple Watch Series 10 GPS 46mm Boîtier en Aluminium Noir de Jais avec Boucle Sport Encre Violette</h2>
+        <p><strong>1 899,000 TND</strong> <span style="text-decoration: line-through; color: #888;">2 980,000 TND</span></p>
+
+        <label for="color">Couleur :</label>
+        <select id="color">
+        <option>bleu marine</option>
+        </select>
+
+        <div class="btn-group">
+        <button class="btn">commander</button>
+        <button class="btn">ajouter au panier</button>
+        </div>
+
+        <!-- Description -->
+        <div class="product-description">
+        <p>
+            Boîtier aluminium : 42 mm en jet black Bracelet Sport en Jet Black : une couleur sophistiquée et intemporelle, avec un design ajustable qui offre un confort optimal au quotidien. GPS intégré Puce : S10 SiP ultra-puissante,pour une réactivité fluide Résistance à l’eau : (jusqu’à 50 m) Fonctionnalité : elle propose une fonction GPS, Siri intégré directement sur l'appareil, ainsi que le suivi du rythme cardiaque, du sommeil, de la saturation en oxygène sanguin et des capteurs de température</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<script>
+    const mainImage = document.querySelector('.main-image');
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+
+    thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+    });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>xawo Coque de protection en carbone</title>
+<link rel="stylesheet" href="kit.css" />
+</head>
+<body>
+
+<section class="product-card">
+    <div class="product-container">
+    <div class="product-images">
+        <img src="cage1.jpg" alt="kit Bluetooth" class="main-image" />
+        <div class="thumbnails">
+        <img src="cage1.jpg" alt="Aperçu 1" />
+        <img src="cage2.jpg" alt="Aperçu 2" />
+        </div>
+    </div>
+
+    <div class="product-details">
+        <h2>Exawo Coque de protection en carbone forgé compatible avec iPhone 13</h2>
+        <p><strong>89TND</strong> <span style="text-decoration: line-through; color: #888;">120 TND</span></p>
+
+        <label for="color">Couleur :</label>
+        <select id="color">
+        <option>black</option>
+        </select>
+
+        <div class="btn-group">
+        <button class="btn">commander</button>
+        <button class="btn">ajouter au panier</button>
+        </div>
+
+        <!-- Description -->
+        <div class="product-description">
+        <p>
+[ Ultra mince et léger ] : ultra fin 0,85 mm, ultra léger 21 g. Léger et fin, comme si vous ne portiez pas la coque. [ Performance de protection UP ] : il est rempli de dévouement à la protection du corps. La fibre de carbone le rend fin comme du papier et solide comme du fer. Un motif de goutte d'eau est placé à l'intérieur de l'étui pour répartir l'impact lorsqu'il tombe dans la coque. Grâce à la conception du bord, l'appareil photo et l'écran ne se heurteront pas à la table ou au sol et ne seront pas endommagés</p>
+        </div>
+    </div>
+    </div>
+</section>
+
+<script>
+    const mainImage = document.querySelector('.main-image');
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+
+    thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+    });
+    });
+</script>
+
+</body>
+</html>

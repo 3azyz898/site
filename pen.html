@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stylet pour iPad - Apple Pencil</title>
+  <link rel="stylesheet" href="pen.css" />
+</head>
+<body>
+
+  <section class="product-card">
+    <div class="product-container">
+      <div class="product-images">
+        <img src="pen2.jpg" alt="Stylet Apple Pencil" class="main-image" />
+        <div class="thumbnails">
+          <img src="pen2.jpg" alt="Aperçu 1" />
+          <img src="pen1.jpg" alt="Aperçu 2" />
+          <img src="pen3.jpg" alt="Aperçu 3" />
+          <img src="pen4.jpg" alt="Aperçu 4" />
+          <img src="pen5.jpg" alt="Aperçu 5" />
+        </div>
+      </div>
+
+      <div class="product-details">
+        <h2>Stylet pour iPad 6ème-11ème Génération - Apple Pencil 2ème génération compatible avec iPad Pro 11"/12.9" & iPad Air 3/4/5</h2>
+        <p><strong>650 TND</strong> <span style="text-decoration: line-through; color: #888;">700 TND</span></p>
+
+        <label for="color">Couleur :</label>
+        <select id="color">
+          <option>black</option>
+          <option>white</option>
+        </select>
+
+        <div class="btn-group">
+          <button class="btn">commander</button>
+          <button class="btn">ajouter au panier</button>
+        </div>
+
+        <!-- Description -->
+        <div class="product-description">
+          <p>
+            Compatible avec iPads 2018-2025, ce stylet vous offre précision et rapidité pour dessiner, écrire et naviguer. Idéal pour étudiants, artistes et professionnels. Recharge rapide et design élégant.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const mainImage = document.querySelector('.main-image');
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+      });
+    });
+  </script>
+
+</body>
+</html>
