@@ -1,15 +1,12 @@
 /* Body and general */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  margin: 0;
-  padding: 70px 28px 28px 28px; /* top padding for fixed elements if needed */
-  color: #333;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  position: relative;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 /* Product card container */
@@ -20,6 +17,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   padding: 30px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   display: flex;
   gap: 30px;
   animation: fadeIn 1s ease-in forwards;
@@ -175,11 +174,46 @@ select {
     opacity: 1;
   }
 }
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: slideInLeft 1s ease-in-out;
+}
 
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  transition: color 0.3s;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #00c8ff;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00c8ff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
 /* Links styling if you want black underlined links anywhere */
-a {
-  color: black;
-  text-decoration: underline;
+.logo {
+  max-height: 60px;
 }
 
 /* Cart (Panier) card styling */
@@ -215,17 +249,26 @@ a {
   font-size: 18px;
   color: #444;
 }
-
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: #111;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-.nav-left {
+/*.nav-left {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -253,7 +296,7 @@ a {
   font-family: 'Montserrat', sans-serif;
 }
 
-
+*/
 .cart-item:last-child {
   border-bottom: none;
 }
@@ -351,4 +394,9 @@ a {
   font-size: 18px;
   color: #333;
   margin: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
