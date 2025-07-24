@@ -1,11 +1,12 @@
 // Firebase Config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY_HERE",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCMfLMUfeFsIPK1WMDZG7TIsdTGMAD77XI",
+  authDomain: "myshoplogin-a996e.firebaseapp.com",
+  projectId: "myshoplogin-a996e",
+  storageBucket: "myshoplogin-a996e.appspot.com",
+  messagingSenderId: "997281054915",
+  appId: "1:997281054915:web:083a08573cf09b99346276", // ⚠️ Remplace si différent
+  measurementId: "G-S60G9B4DFD" // (optionnel, utile si tu utilises Google Analytics)
 };
 
 // Initialize Firebase

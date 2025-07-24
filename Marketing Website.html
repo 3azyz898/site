@@ -1,90 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | PocketBeam Store</title>
-  <link rel="stylesheet" href="home.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Used Values</title> 
+  <style>
+    .card {
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .card-content {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+    .card-content img {
+      width: 100px;
+      height: auto;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .card-content h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .card-content p {
+      color: #555;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <header class="hero">
-    <h1>Welcome to Electronama Store</h1>
-    <p>Welcome to Electronama – your hub for smart gadgets and electronics. Discover high-tech deals at Electronama – quality and innovation in every product!</p>
-  </header>
-
-  <section class="section product-highlight" id="products">
-    <h2>Featured Product: PocketBeam™</h2>
-    <a href="test.html" style="text-decoration: none; color: inherit;">
-      <div class="product-box">
-        <img src="product1.jpg" alt="PocketBeam Projector" />
-        <div class="info">
-          <h2 style="font-weight: bold; color: black; text-decoration: none;">PocketBeam™ Mini Projector</h2>
-          <p>Transform any wall into a cinema with this compact, wireless mini projector.</p>
-          <p>
-            <span style="text-decoration: line-through; color: #888;">199 TND</span>
-            <span style="color: #e74c3c;">149 TND</span>
-          </p>
-          <div class="btn-group">
-            <a href="https://wa.me/21697123609?text=I'm%20interested%20in%20PocketBeam!" class="btn">Order on WhatsApp</a>
-            <a href="#" class="btn">Add to Cart</a>
-          </div>
-        </div>
+  <div class="card">
+    <div class="card-content">
+      <img src="c:\Users\nabil\Downloads\pc img.jpg" alt="Product Image">
+      <div>
+        <h3>Family PC</h3>
+        <p>PC Portable Gamer - MSI THIN 15 B12UC-1232XFR, I7, 16Go, RTX 3050, 15.6" FHD</p>
       </div>
-    </a>
-  </section>
-
-  <section class="section categories">
-    <h2>Shop by Category</h2>
-    <div class="category-boxes">
-      <a href="test.html" class="category">
-        <img src="product1.jpg" alt="Projectors" />
-        <h3>Projectors</h3>
-      </a>
-
-      <a href="#" class="category">
-        <img src="gadget-icon.png" alt="Gadgets" />
-        <h3>Gadgets</h3>
-      </a>
-
-      <a href="#" class="category">
-        <img src="accessory-icon.png" alt="Accessories" />
-        <h3>Accessories</h3>
-      </a>
     </div>
-  </section>
-
-  <section class="section testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial">
-      <p>“Super compact and very clear picture. Best purchase I’ve made this year!”</p>
-      <strong>– Amal, Sousse</strong>
-    </div>
-    <div class="testimonial">
-      <p>“Perfect for Netflix and gaming! Highly recommended.”</p>
-      <strong>– Yassine, Tunis</strong>
-    </div>
-  </section>
-
-  <section class="section newsletter">
-    <h2>Stay Updated</h2>
-    <p>Subscribe to our newsletter to get updates and special offers</p>
-    <form>
-      <input type="email" placeholder="aalmouatelaziz@gmail.com" required />
-      <button class="btn" type="submit">Subscribe</button>
-    </form>
-  </section>
-
-  <footer class="footer" id="contact">
-    <p>&copy; 2025 PocketBeam™. All rights reserved.</p>
-    <p><a href="#">Privacy Policy</a> | <a href="#contact">Contact</a></p>
-  </footer>
-
+  </div>
 </body>
 </html>

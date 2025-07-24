@@ -3,19 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sign In / Sign Up</title>
+  <title>Sign In / Sign Up electronama</title>
   <link rel="stylesheet" href="signin.css" />
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="logo4.png" />
 </head>
 <body>
 
-  <h2>Sign In / Sign Up Form</h2>
+<nav style="width: 100%;">
+  <div class="logo">Electronama</div>
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="home.html">Products</a>
+    <a href="signin.html">Login</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
 
+
+  <div class="logo-container">
+    <img src="logo3.png" alt="Site Logo" class="logo" />
+  </div>
+
+  <h2>Sign In / Sign Up Form</h2>
+<div>
   <div class="container" id="container">
     <!-- Sign Up -->
     <div class="form-container sign-up-container">
-      <form action="#">
+      <form>
         <h1>Create Account</h1>
         <div class="social-container">
           <button type="button" class="social" id="facebookBtn">
@@ -30,13 +45,13 @@
         <input type="text" placeholder="Name" />
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
-        <button>Sign Up</button>
+        <button type="submit">Sign Up</button>
       </form>
     </div>
 
     <!-- Sign In -->
     <div class="form-container sign-in-container">
-      <form action="#">
+      <form>
         <h1>Sign in</h1>
         <div class="social-container">
           <button type="button" class="social" id="facebookBtnSignIn">
@@ -51,11 +66,11 @@
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
         <a href="#">Forgot your password?</a>
-        <button>Sign In</button>
+        <button type="submit">Sign In</button>
       </form>
     </div>
 
-    <!-- Overlay panels -->
+    <!-- Overlay -->
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-left">
@@ -71,70 +86,80 @@
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Firebase and Social Login Script -->
+  <!-- Firebase & JS Auth -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
     import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
-    // Your Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyCMfLMUfeFsIPK1WMDZG7TIsdTGMAD77XI",
       authDomain: "myshoplogin-a996e.firebaseapp.com",
       projectId: "myshoplogin-a996e",
-      storageBucket: "myshoplogin-a996e.firebasestorage.app",
+      storageBucket: "myshoplogin-a996e.appspot.com",
       messagingSenderId: "997281054915",
       appId: "1:997281054915:web:083a08573cf09b99346276",
       measurementId: "G-S60G9B4DFD"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
-
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
 
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
-
-    signUpButton.addEventListener('click', () => {
-      container.classList.add("right-panel-active");
+    // UI switches
+    document.getElementById('signUp').addEventListener('click', () => {
+      document.getElementById('container').classList.add("right-panel-active");
     });
 
-    signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
+    document.getElementById('signIn').addEventListener('click', () => {
+      document.getElementById('container').classList.remove("right-panel-active");
     });
 
-    // Google Sign In / Sign Up
-    const handleGoogleLogin = () => {
+    // Sign up with Google
+    document.getElementById('googleBtn').addEventListener('click', () => {
       signInWithPopup(auth, googleProvider)
-        .then(result => {
-          alert(`Welcome ${result.user.displayName}`);
+        .then((result) => {
+          alert("Bienvenue, " + result.user.displayName);
         })
-        .catch(error => {
-          alert("Google Sign-in Error: " + error.message);
+        .catch((error) => {
+          console.error(error.message);
         });
-    };
+    });
 
-    document.getElementById('googleBtn').addEventListener('click', handleGoogleLogin);
-    document.getElementById('googleBtnSignIn').addEventListener('click', handleGoogleLogin);
+    // Sign in with Google
+    document.getElementById('googleBtnSignIn').addEventListener('click', () => {
+      signInWithPopup(auth, googleProvider)
+        .then((result) => {
+          alert("Connecté en tant que " + result.user.displayName);
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    });
 
-    // Facebook Sign In / Sign Up
-    const handleFacebookLogin = () => {
+    // Sign up with Facebook
+    document.getElementById('facebookBtn').addEventListener('click', () => {
       signInWithPopup(auth, facebookProvider)
-        .then(result => {
-          alert(`Welcome ${result.user.displayName}`);
+        .then((result) => {
+          alert("Bienvenue, " + result.user.displayName);
         })
-        .catch(error => {
-          alert("Facebook Sign-in Error: " + error.message);
+        .catch((error) => {
+          console.error(error.message);
         });
-    };
+    });
 
-    document.getElementById('facebookBtn').addEventListener('click', handleFacebookLogin);
-    document.getElementById('facebookBtnSignIn').addEventListener('click', handleFacebookLogin);
+    // Sign in with Facebook
+    document.getElementById('facebookBtnSignIn').addEventListener('click', () => {
+      signInWithPopup(auth, facebookProvider)
+        .then((result) => {
+          alert("Connecté en tant que " + result.user.displayName);
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    });
   </script>
-
 </body>
 </html>

@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Open current HTML in Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "file": "${file}",  // This opens the currently open file in Chrome
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

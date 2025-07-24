@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Stylet pour iPad - Apple Pencil</title>
-<link rel="stylesheet" href="projecteur2.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videoprojecteur 4K Electronama</title>
+  <link rel="stylesheet" href="projecteur2.css" />
+  <link rel="icon" type="image/png" href="logo4.png" />
 </head>
 <body>
 
-<section class="product-card">
-    <div class="product-container">
-    <div class="product-images">
-        <img src="projecteur.jpg" alt="Videoprojecteur 4K 1080P " class="main-image" />
-        <div class="thumbnails">
-        <img src="projecteur.jpg" alt="Aperçu 1" />
-        <img src="projecteur2.jpg" alt="Aperçu 2" />
-        <img src="projecteur3.jpg" alt="Aperçu 3" />
-        <img src="projecteur4.jpg" alt="Aperçu 4" />
-        <img src="projecteur5.jpg" alt="Aperçu 5" />
-        </div>
+  <!-- Navigation Menu -->
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-left">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="signin.html">Login</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <span>Technorama</span>
+      </div>
     </div>
+  </nav>
 
-    <div class="product-details">
-        <h2>Videoprojecteur 4K 1080P Natif 36000Lux Projecteur Video, avec Movin, 4D/4P Keystone, Focus Électrique, WiFi6, Bluetooth Lisowod Retroprojecteur Portable pour Home Cinéma</h2>
+  <!-- Product Section -->
+  <section class="product-card">
+    <div class="product-container">
+      <div class="product-images">
+        <img src="projecteur.jpg" alt="Videoprojecteur 4K 1080P" class="main-image" />
+        <div class="thumbnails">
+          <img src="projecteur.jpg" alt="Aperçu 1" />
+          <img src="projecteur2.jpg" alt="Aperçu 2" />
+          <img src="projecteur3.jpg" alt="Aperçu 3" />
+          <img src="projecteur4.jpg" alt="Aperçu 4" />
+          <img src="projecteur5.jpg" alt="Aperçu 5" />
+        </div>
+      </div>
+
+      <div class="product-details">
+        <h2>
+          Videoprojecteur 4K 1080P Natif 36000Lux Projecteur Video, avec Movin, 4D/4P Keystone, Focus Électrique, WiFi6, Bluetooth Lisowod Retroprojecteur Portable pour Home Cinéma
+        </h2>
         <p><strong>599 TND</strong> <span style="text-decoration: line-through; color: #888;">700 TND</span></p>
 
         <label for="color">Couleur :</label>
         <select id="color">
-        <option>black</option>
-        <option>white</option>
+          <option>black</option>
+          <option>white</option>
         </select>
 
         <div class="btn-group">
-        <button class="btn" id="commanderBtn6">commander</button>
-        <button class="btn" id="commanderBtn6+">ajouter au panier</button>
+          <button class="btn" id="commanderBtn6">commander</button>
+          <button class="btn" id="commanderBtn6Plus">ajouter au panier</button>
         </div>
 
         <!-- Description -->
         <div class="product-description">
-        <p>
-            Réponse Ultra-Rapide, Expérience Personnalisée - Nouveau Système d'Exploitation Intelligen Le videoprojecteur 4K intègre le système MOVIN, une technologie intelligente conçue spécifiquement pour les videoprojecteurs. Basé sur un OS de télévision intelligent et propulsé par des puces de la Silicon Valley, il offre une fluidité améliorée de 50% grâce à l'IA. Son interface DIY permet une navigation facile, même pour les utilisateurs novices. Ontrairement aux projecteurs Android TV non autorisés, il a été certifié par les applications pour garantir des mises à jour régulières et un système stable pour une expérience fluide
-        </p>
+          <p>
+            Réponse Ultra-Rapide, Expérience Personnalisée - Nouveau Système d'Exploitation Intelligent. Le videoprojecteur 4K intègre le système MOVIN, une technologie intelligente conçue spécifiquement pour les videoprojecteurs. Basé sur un OS de télévision intelligent et propulsé par des puces de la Silicon Valley, il offre une fluidité améliorée de 50% grâce à l'IA. Son interface DIY permet une navigation facile, même pour les utilisateurs novices. Contrairement aux projecteurs Android TV non autorisés, il a été certifié par les applications pour garantir des mises à jour régulières et un système stable pour une expérience fluide.
+          </p>
         </div>
-
+      </div>
     </div>
-    </div>
-</section>
+  </section>
 
+  <!-- Script -->
   <script>
     document.getElementById('commanderBtn6').addEventListener('click', function () {
       window.location.href = 'signin.html';
     });
 
-                 document.getElementById('commanderBtn6+').addEventListener('click', function () {
+    document.getElementById('commanderBtn6Plus').addEventListener('click', function () {
       window.location.href = 'signin.html';
-    }); 
-
+    });
 
     const mainImage = document.querySelector('.main-image');
     const thumbnails = document.querySelectorAll('.thumbnails img');
