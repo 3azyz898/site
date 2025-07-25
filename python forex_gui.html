@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forex Profit Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 30px;
+    }
+    h2 {
+      color: #333;
+    }
+    input, select, button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    #result {
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>🧮 Forex Profit Calculator</h2>
+
+  <label for="pips">🔢 Number of Pips:</label>
+  <input type="number" id="pips" placeholder="e.g. 20">
+
+  <label for="lot">📏 Lot Size:</label>
+  <select id="lot">
+    <option value="0.01">0.01 (Micro)</option>
+    <option value="0.1">0.1 (Mini)</option>
+    <option value="1">1.0 (Standard)</option>
+  </select>
+
+  <button onclick="calculate()">Calculate Profit</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculate() {
+      const pips = parseFloat(document.getElementById("pips").value);
+      const lot = parseFloat(document.getElementById("lot").value);
+      if (isNaN(pips)) {
+        document.getElementById("result").innerText = "❌ Please enter valid pips.";
+        return;
+      }
+      const pipValue = lot * 10;
+      const profit = pips * pipValue;
+      document.getElementById("result").innerText = `✔️ Profit = $${profit.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
